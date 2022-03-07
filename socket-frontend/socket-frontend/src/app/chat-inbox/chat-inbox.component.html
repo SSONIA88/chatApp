@@ -1,0 +1,49 @@
+<div class="container">
+  <app-username (userNameEvent)="userNameUpdate($event)" *ngIf="(!userName)" ></app-username>
+  <h1>Chat App</h1>
+  <div class="chat-box">
+    <div class="chatbox_user-list" id="list">
+      <h2>User list</h2>
+      <div class="chatbox_user-active" *ngFor="let user of userList">
+        <p>{{user}}</p>
+      </div>
+    </div>
+    <div class="messages_list">
+      <div class="chatbox_message" *ngFor="let msg of messageList" >
+    <div class="user-message">
+      <div class="message-box">
+        <p class="name"> {{msg.userName}}</p>
+      
+        <p class="message"> {{msg.message}} </p>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <input type="text" [(ngModel)]="message">
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div class="chat-messages">
+    <div class="chat-messages-show-container ">
+     
+    
+    </div>
+   <div class="chat-container"></div>
+   <ng-container>
+       <div class="chat-body">
+           <p class="message-container">{{content}}</p>
+       </div>
+   </ng-container>
+    <div class="chat-messages-create-container" > 
+      <input class="chat-messages-create-input" type="text" [(ngModel)]="message">
+      <button  class="chat-messages-create-button" (click)="sendMessage()" > Send </button>
+    </div>
+ </div> -->
